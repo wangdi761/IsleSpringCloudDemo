@@ -9,17 +9,17 @@ import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.annotation.Transformer;
 
-@EnableBinding(Sink.class)
+//@EnableBinding(Sink.class)
 public class SinkReceiver2 {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SinkReceiver2.class);
 
-    @ServiceActivator(inputChannel = Sink.INPUT)
+    //@ServiceActivator(inputChannel = Sink.INPUT)
     public void receive(User user) {
         LOGGER.info("Received: {}", user);
     }
 
-    @Transformer(inputChannel = Sink.INPUT, outputChannel = Sink.INPUT)
+    //@Transformer(inputChannel = Sink.INPUT, outputChannel = Sink.INPUT)
     public User transform(String message) throws Exception {
         return JSON.parseObject(message, User.class);
     }
