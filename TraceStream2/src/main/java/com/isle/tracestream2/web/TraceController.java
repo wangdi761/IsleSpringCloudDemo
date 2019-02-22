@@ -1,4 +1,4 @@
-package com.isle.trace2.web;
+package com.isle.tracestream2.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
